@@ -1,0 +1,87 @@
+#include "waipio-audio-overlay.dtsi"
+
+&swr_haptics {
+	status = "disabled";
+};
+
+&wsa_macro {
+	status = "disabled";
+};
+
+&cdc_tert_mi2s_gpios {
+	status = "disabled";
+};
+
+&wsa_swr_gpios {
+	status = "disabled";
+};
+
+&wsa2_swr_gpios {
+	status = "disabled";
+};
+
+&cdc_dmic01_gpios {
+	status = "disabled";
+};
+
+&cdc_dmic23_gpios {
+	status = "disabled";
+};
+
+&cdc_dmic45_gpios {
+	status = "disabled";
+};
+
+&cdc_dmic67_gpios {
+	status = "disabled";
+};
+
+&wsa_spkr_en1 {
+	status = "disabled";
+};
+
+&wsa_spkr_en2 {
+	status = "disabled";
+};
+
+&wsa2_spkr_en1 {
+	status = "disabled";
+};
+
+&wsa2_spkr_en2 {
+	status = "disabled";
+};
+
+
+&waipio_snd {
+	qcom,tert-mi2s-gpios = <&cdc_tert_tdm_gpios>;
+	qcom,uart-audio-sw-gpio = <&sbu_uart_en>;
+	qcom,tdm-audio-intf = <1>;
+};
+
+&spf_core_platform {
+	cdc_tert_tdm_gpios: tert_tdm_pinctrl {
+		status= "ok";
+		compatible = "qcom,msm-cdc-pinctrl";
+		pinctrl-names = "aud_active", "aud_sleep";
+		pinctrl-0 = <&tert_tdm_clk_active &tert_tdm_ws_active
+				&tert_tdm_din_active &tert_tdm_dout_active>;
+		pinctrl-1 = <&tert_tdm_clk_sleep &tert_tdm_ws_sleep
+				&tert_tdm_din_sleep &tert_tdm_dout_sleep>;
+		#gpio-cells = <0>;
+	};
+};
+
+&lpass_cdc {
+	qcom,num-macros = <3>;
+};
+
+&soc {
+	sbu_uart_en: msm_cdc_pinctrl@74 {
+		compatible = "qcom,msm-cdc-pinctrl";
+		pinctrl-names = "aud_active", "aud_sleep";
+		pinctrl-0 = <&sbu_uart_en_active_cup>;
+		pinctrl-1 = <&sbu_uart_en_idle_cup>;
+		#gpio-cells = <0>;
+	};
+};
