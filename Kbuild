@@ -6,7 +6,7 @@ dtbo-$(CONFIG_ARCH_WAIPIO) += waipio-audio.dtbo \
                  waipio-audio-rumi.dtbo \
                  waipio-audio-hdk.dtbo
 
-dtbo-$(CONFIG_ARCH_DIWALI) += diwali-audio.dtbo \
+dtbo-n += diwali-audio.dtbo \
                  diwali-audio-idp.dtbo \
                  diwali-audio-idp-amoled.dtbo \
                  diwali-audio-qrd.dtbo \
@@ -14,7 +14,7 @@ dtbo-$(CONFIG_ARCH_DIWALI) += diwali-audio.dtbo \
                  diwali-audio-idp-hsp.dtbo \
                  diwali-audio-idp-usbc.dtbo
 
-dtbo-$(CONFIG_ARCH_CAPE) += cape-audio.dtbo \
+dtbo-n += cape-audio.dtbo \
                  cape-audio-cdp.dtbo \
                  cape-audio-cdp-qhd.dtbo \
                  cape-audio-mtp.dtbo \
