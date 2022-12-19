@@ -112,7 +112,7 @@
 	qcom,msm-mbhc-hphl-swh = <0>;
 	qcom,msm-mbhc-gnd-swh = <0>;
 	qcom,wsa-max-devs = <0>;
-	qcom,upd_lpass_reg_addr = <0x418 0x33b0300>;
+	qcom,upd_lpass_reg_addr = <0x3200418 0x33b0300>;
 };
 
 &spf_core_platform {
